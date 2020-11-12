@@ -214,7 +214,7 @@ def _gen_reference(fixed_image, moving_image, fov_mask=None, out_file=None,
                 'Fixed image and mask have different affines')
 
         # Get mask into reference space
-        masknii = nli.resample_img(fixed_image,
+        masknii = nli.resample_img(masknii,
                                    target_affine=new_affine,
                                    interpolation='nearest')
         res_shape = np.array(masknii.shape[:3])
